@@ -1,23 +1,17 @@
-<script>
-import { useRoute } from "vue-router";
-import { computed } from "vue";
-export default {
-  name: "App",
-  setup() {
-    const route = useRoute();
-
-    // Hide navigation only on the homepage ("/")
-    const showNavigation = computed(() => route.path !== "/");
-
-    return {
-      showNavigation,
-    };
-  },
-};
-</script>
-
 <template>
+  <SiteNavigation />
   <router-view :key="$route.params.position" />
 </template>
+
+<script>
+import SiteNavigation from "./components/SiteNavigation.vue";
+export default {
+  name: "App",
+  components: {
+    SiteNavigation,
+  },
+  setup() {},
+};
+</script>
 
 <style scoped></style>

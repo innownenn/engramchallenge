@@ -1,9 +1,7 @@
 <template>
   <div class="mainpage">
     <h1>Home Page</h1>
-    <p>
-      This is the home page. You can edit the content of this page by editing.
-    </p>
+    <p>Images will be displayed here</p>
     <div id="image-container">
       <div v-for="(item, index) in 8" :key="index" class="image">
         <h1>Cool image</h1>
@@ -22,7 +20,7 @@ export default {
 
 <style scoped>
 .mainpage {
-  width: 100%;
+  width: 80vw;
   border: red solid 1px;
 }
 
@@ -43,5 +41,10 @@ export default {
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
+}
+
+.image:hover {
+  transform: scale(1.05);
+  cursor: pointer;
 }
 </style>
